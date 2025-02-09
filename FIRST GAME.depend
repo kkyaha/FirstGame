@@ -1,0 +1,68 @@
+# depslib dependency file v1.0
+1738940557 source:c:\nguyen khanh ky\c++\first game\main.cpp
+	"Engine.h"
+
+1738921898 c:\nguyen khanh ky\c++\first game\core\engine.h
+
+1738940834 source:c:\nguyen khanh ky\c++\first game\sources\core\engine.cpp
+	"Engine.h"
+	<iostream>
+
+1738940488 c:\nguyen khanh ky\c++\first game\sources\core\engine.h
+	<SDL.h>
+	<SDL_image.h>
+
+1738943119 c:\nguyen khanh ky\c++\first game\src\core\engine.h
+	<SDL.h>
+	<SDL_image.h>
+
+1739094698 source:c:\nguyen khanh ky\c++\first game\src\core\engine.cpp
+	"Engine.h"
+	"TextureManager.h"
+	"Soilder.h"
+
+1739068749 c:\nguyen khanh ky\c++\first game\src\graphics\texturemanager.h
+	<string>
+	<SDL.h>
+	<map>
+
+1739094830 source:c:\nguyen khanh ky\c++\first game\src\graphics\texturemanager.cpp
+	"TextureManager.h"
+	"Engine.h"
+	"SDL.h"
+
+1739007922 c:\nguyen khanh ky\c++\first game\src\physics\vector2d.h
+	<iostream>
+
+1739008672 c:\nguyen khanh ky\c++\first game\src\physics\transform.h
+	"Vector2D.h"
+
+1739094490 source:c:\nguyen khanh ky\c++\first game\src\characters\soilder.cpp
+	"Soilder.h"
+	"TextureManager.h"
+	"SDL.h"
+	"Animation.h"
+
+1739087641 c:\nguyen khanh ky\c++\first game\src\characters\soilder.h
+	"Character.h"
+	"Animation.h"
+
+1739076624 c:\nguyen khanh ky\c++\first game\src\characters\character.h
+	"GameObject.h"
+	<string>
+
+1739074697 c:\nguyen khanh ky\c++\first game\src\object\gameobject.h
+	"SDL.h"
+	"IObject.h"
+	"Transform.h"
+
+1739007922 c:\nguyen khanh ky\c++\first game\src\object\iobject.h
+
+1739087641 c:\nguyen khanh ky\c++\first game\src\animation\animation.h
+	<string>
+	"SDL.h"
+
+1739093068 source:c:\nguyen khanh ky\c++\first game\src\animation\animation.cpp
+	"Animation.h"
+	"TextureManager.h"
+

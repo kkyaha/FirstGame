@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="FIRST GAME" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/FIRST GAME" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="src/engine/Core" />
+					<Add directory="src/Core" />
+					<Add directory="Core" />
+					<Add directory="Sources/Core" />
+					<Add directory="src/Graphics" />
+					<Add directory="src/Physics" />
+					<Add directory="src/Object" />
+					<Add directory="src/Characters" />
+					<Add directory="src/Animation" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/FIRST GAME" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="src/engine/Core" />
+					<Add directory="src/Core" />
+					<Add directory="Core" />
+					<Add directory="Sources/Core" />
+					<Add directory="src/Graphics" />
+					<Add directory="src/Physics" />
+					<Add directory="src/Object" />
+					<Add directory="src/Characters" />
+					<Add directory="src/Animation" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Animation/Animation.cpp" />
+		<Unit filename="src/Animation/Animation.h" />
+		<Unit filename="src/Characters/Character.h" />
+		<Unit filename="src/Characters/Soilder.cpp" />
+		<Unit filename="src/Characters/Soilder.h" />
+		<Unit filename="src/Core/Engine.cpp" />
+		<Unit filename="src/Core/Engine.h" />
+		<Unit filename="src/Graphics/TextureManager.cpp" />
+		<Unit filename="src/Graphics/TextureManager.h" />
+		<Unit filename="src/Object/GameObject.h" />
+		<Unit filename="src/Object/IObject.h" />
+		<Unit filename="src/Physics/Transform.h" />
+		<Unit filename="src/Physics/Vector2D.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
