@@ -16,17 +16,19 @@
 	<SDL.h>
 	<SDL_image.h>
 
-1739094698 source:c:\nguyen khanh ky\c++\first game\src\core\engine.cpp
+1739372799 source:c:\nguyen khanh ky\c++\first game\src\core\engine.cpp
 	"Engine.h"
 	"TextureManager.h"
+	"Input.h"
 	"Soilder.h"
+	"SDL.h"
 
-1739068749 c:\nguyen khanh ky\c++\first game\src\graphics\texturemanager.h
+1739271385 c:\nguyen khanh ky\c++\first game\src\graphics\texturemanager.h
 	<string>
 	<SDL.h>
 	<map>
 
-1739094830 source:c:\nguyen khanh ky\c++\first game\src\graphics\texturemanager.cpp
+1739285249 source:c:\nguyen khanh ky\c++\first game\src\graphics\texturemanager.cpp
 	"TextureManager.h"
 	"Engine.h"
 	"SDL.h"
@@ -34,16 +36,18 @@
 1739007922 c:\nguyen khanh ky\c++\first game\src\physics\vector2d.h
 	<iostream>
 
-1739008672 c:\nguyen khanh ky\c++\first game\src\physics\transform.h
+1739442368 c:\nguyen khanh ky\c++\first game\src\physics\transform.h
 	"Vector2D.h"
 
-1739094490 source:c:\nguyen khanh ky\c++\first game\src\characters\soilder.cpp
+1739372798 source:c:\nguyen khanh ky\c++\first game\src\characters\soilder.cpp
 	"Soilder.h"
 	"TextureManager.h"
 	"SDL.h"
 	"Animation.h"
+	"Input.h"
+	<cmath>
 
-1739087641 c:\nguyen khanh ky\c++\first game\src\characters\soilder.h
+1739356440 c:\nguyen khanh ky\c++\first game\src\characters\soilder.h
 	"Character.h"
 	"Animation.h"
 
@@ -58,11 +62,18 @@
 
 1739007922 c:\nguyen khanh ky\c++\first game\src\object\iobject.h
 
-1739087641 c:\nguyen khanh ky\c++\first game\src\animation\animation.h
+1739271899 c:\nguyen khanh ky\c++\first game\src\animation\animation.h
 	<string>
 	"SDL.h"
 
-1739093068 source:c:\nguyen khanh ky\c++\first game\src\animation\animation.cpp
+1739275115 source:c:\nguyen khanh ky\c++\first game\src\animation\animation.cpp
 	"Animation.h"
 	"TextureManager.h"
+
+1739264804 source:c:\nguyen khanh ky\c++\first game\src\inputs\input.cpp
+	"Input.h"
+	"Engine.h"
+
+1739264550 c:\nguyen khanh ky\c++\first game\src\inputs\input.h
+	"SDL.h"
 

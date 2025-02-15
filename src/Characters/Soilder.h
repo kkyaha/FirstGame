@@ -18,6 +18,9 @@ class Soilder: public Character
     private:
         //int m_Row, m_Frame, m_FrameCount;
         //int m_AnimationSpeed;
+        int m_WeaponID;
+        float m_Speed;
+        double m_Angle;
         Animation* m_Animation;
 };
 

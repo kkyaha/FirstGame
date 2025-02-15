@@ -1,7 +1,8 @@
 #include "Engine.h"
 #include "TextureManager.h"
-
+#include "Input.h"
 #include "Soilder.h"
+#include "SDL.h"
 
 using namespace std;
 
@@ -23,14 +24,26 @@ bool Engine::Init() {
         SDL_Log("Fail to create render", SDL_GetError());
         return false;
     }
-    TextureManager::GetInstance()->Load("player", "Assets/FlashIdle.png");
 
-    player = new Soilder(new Properties("player", 200, 200, 305, 223));
+    TextureManager::GetInstance()->Load("player_idle", "Assets/FlashIdle.png");
+    TextureManager::GetInstance()->Load("player_run", "Assets/FlashRun.png");
+    TextureManager::GetInstance()->Load("player_attack", "Assets/FlashAttack.png");
+    TextureManager::GetInstance()->Load("player_hand_gun_idle", "Assets/HandGunIdle.png");
+    TextureManager::GetInstance()->Load("player_hand_gun_run", "Assets/HandGunRun.png");
+    TextureManager::GetInstance()->Load("player_hand_gun_attack", "Assets/HandGunAttack.png");
+    TextureManager::GetInstance()->Load("player_hand_gun_reload", "Assets/HandGunReload.png");
+    TextureManager::GetInstance()->Load("player_knife_run", "Assets/KnifeRun.png");
+    TextureManager::GetInstance()->Load("player_knife_attack", "Assets/KnifeAttack.png");
+    TextureManager::GetInstance()->Load("player_knife_idle", "Assets/KnifeIdle.png");
+    TextureManager::GetInstance()->Load("player_rife_run", "Assets/RifeRun.png");
+    TextureManager::GetInstance()->Load("player_rife_attack", "Assets/RifeAttack.png");
+    TextureManager::GetInstance()->Load("player_rife_idle", "Assets/RifeIdle.png");
+    TextureManager::GetInstance()->Load("player_sg_run", "Assets/SgRun.png");
+    TextureManager::GetInstance()->Load("player_sg_attack", "Assets/SgAttack.png");
+    TextureManager::GetInstance()->Load("player_sg_idle", "Assets/SgIdle.png");
 
-    if (!TextureManager::GetInstance()->Load("player", "Assets/FlashIdle.png")) {
-    SDL_Log("Failed to load player texture: %s", SDL_GetError());
-    return false;
-    }
+    player = new Soilder(new Properties("player", 300, 300, 305, 223));
+
     Transform tf;
     tf.Log();
 
@@ -46,13 +59,7 @@ void Engine::Render() {
 }
 
 void Engine::Events() {
-    SDL_Event event;
-    SDL_PollEvent(&event);
-    switch (event.type) {
-        case SDL_QUIT:
-            Quit();
-            break;
-    }
+    Input::GetInstance()->Listen();
 }
 
 bool Engine::Clean() {
