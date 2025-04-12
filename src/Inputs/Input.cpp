@@ -8,6 +8,10 @@ Input::Input()
     m_KeyStates = SDL_GetKeyboardState(nullptr);
 }
 
+bool Input::GetMouseButtonDown(int button) {
+        return SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(button);
+    }
+
 void Input::Listen()
 {
     SDL_Event event;

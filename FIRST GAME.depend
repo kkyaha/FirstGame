@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1738940557 source:c:\nguyen khanh ky\c++\first game\main.cpp
+1739960421 source:c:\nguyen khanh ky\c++\first game\main.cpp
 	"Engine.h"
+	<iostream>
 
 1738921898 c:\nguyen khanh ky\c++\first game\core\engine.h
 
@@ -12,26 +13,41 @@
 	<SDL.h>
 	<SDL_image.h>
 
-1738943119 c:\nguyen khanh ky\c++\first game\src\core\engine.h
+1741752741 c:\nguyen khanh ky\c++\first game\src\core\engine.h
 	<SDL.h>
 	<SDL_image.h>
+	"Vector2D.h"
+	"Menu.h"
+	"GameOverMenu.h"
+	"Soilder.h"
 
-1739372799 source:c:\nguyen khanh ky\c++\first game\src\core\engine.cpp
+1744120051 source:c:\nguyen khanh ky\c++\first game\src\core\engine.cpp
 	"Engine.h"
 	"TextureManager.h"
 	"Input.h"
 	"Soilder.h"
 	"SDL.h"
+	"Camera.h"
+	"Zombie.h"
+	"ZombieManager.h"
+	"BulletManager.h"
+	"SDL_image.h"
+	"Menu.h"
+	"Bullet.h"
+	"GameOverMenu.h"
+	<cstdlib>
+	<ctime>
 
-1739271385 c:\nguyen khanh ky\c++\first game\src\graphics\texturemanager.h
+1740302661 c:\nguyen khanh ky\c++\first game\src\graphics\texturemanager.h
 	<string>
 	<SDL.h>
 	<map>
 
-1739285249 source:c:\nguyen khanh ky\c++\first game\src\graphics\texturemanager.cpp
+1742130822 source:c:\nguyen khanh ky\c++\first game\src\graphics\texturemanager.cpp
 	"TextureManager.h"
 	"Engine.h"
 	"SDL.h"
+	<iostream>
 
 1739007922 c:\nguyen khanh ky\c++\first game\src\physics\vector2d.h
 	<iostream>
@@ -39,19 +55,25 @@
 1739442368 c:\nguyen khanh ky\c++\first game\src\physics\transform.h
 	"Vector2D.h"
 
-1739372798 source:c:\nguyen khanh ky\c++\first game\src\characters\soilder.cpp
+1743863153 source:c:\nguyen khanh ky\c++\first game\src\characters\soilder.cpp
 	"Soilder.h"
 	"TextureManager.h"
 	"SDL.h"
 	"Animation.h"
 	"Input.h"
 	<cmath>
+	"Camera.h"
+	"Position.h"
+	"Engine.h"
+	"BulletManager.h"
+	"Zombie.h"
+	"ZombieManager.h"
 
-1739356440 c:\nguyen khanh ky\c++\first game\src\characters\soilder.h
+1743861070 c:\nguyen khanh ky\c++\first game\src\characters\soilder.h
 	"Character.h"
 	"Animation.h"
 
-1739076624 c:\nguyen khanh ky\c++\first game\src\characters\character.h
+1739948863 c:\nguyen khanh ky\c++\first game\src\characters\character.h
 	"GameObject.h"
 	<string>
 
@@ -66,14 +88,133 @@
 	<string>
 	"SDL.h"
 
-1739275115 source:c:\nguyen khanh ky\c++\first game\src\animation\animation.cpp
+1740410748 source:c:\nguyen khanh ky\c++\first game\src\animation\animation.cpp
 	"Animation.h"
 	"TextureManager.h"
+	<iostream>
 
-1739264804 source:c:\nguyen khanh ky\c++\first game\src\inputs\input.cpp
+1740312610 source:c:\nguyen khanh ky\c++\first game\src\inputs\input.cpp
 	"Input.h"
 	"Engine.h"
 
-1739264550 c:\nguyen khanh ky\c++\first game\src\inputs\input.h
+1744118468 c:\nguyen khanh ky\c++\first game\src\inputs\input.h
 	"SDL.h"
+
+1739612771 source:c:\nguyen khanh ky\c++\first game\camera\camera.cpp
+	"Camera.h"
+
+1739612771 c:\nguyen khanh ky\c++\first game\camera\camera.h
+
+1741746238 source:c:\nguyen khanh ky\c++\first game\src\camera\camera.cpp
+	"Camera.h"
+
+1739670985 c:\nguyen khanh ky\c++\first game\src\camera\camera.h
+	<SDL.h>
+	"Soilder.h"
+
+1744119387 source:c:\nguyen khanh ky\c++\first game\src\characters\zombie.cpp
+	"Zombie.h"
+	"Soilder.h"
+	"TextureManager.h"
+	"SDL.h"
+	"Animation.h"
+	"Camera.h"
+	"Engine.h"
+	"ZombieManager.h"
+	<cmath>
+
+1744118808 c:\nguyen khanh ky\c++\first game\src\characters\zombie.h
+	"Character.h"
+	"Soilder.h"
+	"Position.h"
+
+1739896583 source:c:\nguyen khanh ky\c++\first game\zombiemanager.cpp
+	"ZombieManager.h"
+	"Engine.h"
+	<cstdlib>
+	<ctime>
+
+1739896507 c:\nguyen khanh ky\c++\first game\zombiemanager.h
+	"Zombie.h"
+	<vector>
+
+1743430509 c:\nguyen khanh ky\c++\first game\src\characters\zombiemanager.h
+	"Bullet.h"
+	"Zombie.h"
+	<vector>
+
+1743863352 source:c:\nguyen khanh ky\c++\first game\src\characters\zombiemanager.cpp
+	"ZombieManager.h"
+	"Zombie.h"
+	"Camera.h"
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<math.h>
+
+1740487688 c:\nguyen khanh ky\c++\first game\src\characters\position.h
+
+1740537349 c:\nguyen khanh ky\c++\first game\src\bullet\bulletmanager.h
+	<vector>
+	"Bullet.h"
+
+1742132794 c:\nguyen khanh ky\c++\first game\src\bullet\bullet.h
+	<iostream>
+	"Animation.h"
+
+1744120051 source:c:\nguyen khanh ky\c++\first game\src\bullet\bullet.cpp
+	"Bullet.h"
+	"Soilder.h"
+	"BulletManager.h"
+	"Engine.h"
+	<cmath>
+
+1740070955 source:c:\nguyen khanh ky\c++\first game\src\bullet\pistolbullet.cpp
+	"PistolBullet.h"
+	<cmath>
+
+1740070549 c:\nguyen khanh ky\c++\first game\src\bullet\pistolbullet.h
+	"Bullet.h"
+
+1740070955 source:c:\nguyen khanh ky\c++\first game\src\bullet\rifebullet.cpp
+	"RifeBullet.h"
+	<cmath>
+
+1740070575 c:\nguyen khanh ky\c++\first game\src\bullet\rifebullet.h
+	"Bullet.h"
+
+1740070955 source:c:\nguyen khanh ky\c++\first game\src\bullet\shotgunbullet.cpp
+	"ShotgunBullet.h"
+	<cmath>
+
+1740070549 c:\nguyen khanh ky\c++\first game\src\bullet\shotgunbullet.h
+	"Bullet.h"
+
+1743646701 source:c:\nguyen khanh ky\c++\first game\src\bullet\bulletmanager.cpp
+	"BulletManager.h"
+	"ZombieManager.h"
+	"Bullet.h"
+	"Soilder.h"
+	"Engine.h"
+	"Camera.h"
+	<cmath>
+
+1742911497 source:c:\nguyen khanh ky\c++\first game\src\menu\menu.cpp
+	"Menu.h"
+	"Input.h"
+	"Engine.h"
+
+1741748729 c:\nguyen khanh ky\c++\first game\src\menu\menu.h
+	"SDL.h"
+	"SDL_ttf.h"
+	<vector>
+	<string>
+
+1743067926 source:c:\nguyen khanh ky\c++\first game\src\menu\gameovermenu.cpp
+	"GameOverMenu.h"
+	"Engine.h"
+	"Input.h"
+
+1743067753 c:\nguyen khanh ky\c++\first game\src\menu\gameovermenu.h
+	"Menu.h"
 

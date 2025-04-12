@@ -18,9 +18,15 @@ class TextureManager
         void Drop(std::string id);
         void Clean();
 
+        void Draw(std::string id, SDL_Rect src, SDL_Rect dest);
         void Draw(std::string id, int x, int y, int width, int height, SDL_RendererFlip flip = SDL_FLIP_NONE);
         void DrawFrame(std::string id, int x, int y, int width, int height, int row, int frame, SDL_RendererFlip flip = SDL_FLIP_NONE, double angle = 0);
-
+        SDL_Texture* GetTexture(const std::string& id) {
+        if (m_TextureMap.find(id) != m_TextureMap.end()) {
+            return m_TextureMap[id];
+        }
+        return nullptr;
+    }
     private:
         TextureManager(){}
         std::map<std::string, SDL_Texture*> m_TextureMap;

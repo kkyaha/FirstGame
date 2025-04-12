@@ -14,6 +14,7 @@ class Input
     }
     void Listen();
     bool GetKeyDown(SDL_Scancode key);
+    bool GetMouseButtonDown(int button);
 
     private:
         Input();
@@ -22,6 +23,7 @@ class Input
 
         const Uint8* m_KeyStates;
         static Input* s_Instance;
+
 };
 
 #endif // INPUT_H

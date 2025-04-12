@@ -1,5 +1,6 @@
 #include "Animation.h"
 #include "TextureManager.h"
+#include <iostream>
 
 void Animation::Update()
 {
@@ -8,7 +9,6 @@ void Animation::Update()
 
 void Animation::Draw(float x, float y, int spriteWidth, int spriteHeight, double angle)
 {
-
     TextureManager::GetInstance()->DrawFrame(m_TextureID, x, y, spriteWidth, spriteHeight, m_SpriteRow, m_SpriteFrame, m_Flip, angle);
     //SDL_Log("🎞️ Frame hiện tại: %d / Tổng Frame: %d", m_SpriteFrame, m_FrameCount);
 }
