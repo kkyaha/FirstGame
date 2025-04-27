@@ -12,13 +12,13 @@ Bullet::Bullet(float x, float y, float angle, BulletType type): m_X(x), m_Y(y), 
     m_DirectionY = sin(angle * M_PI / 180.0f);
     switch (type) {
         case BulletType::PISTOL:
-            m_Speed = 500.0f;
+            m_Speed = 400.0f;
             m_Damage = 20.0f;
             //m_FireDelay = 0.3f;  // Pistol gây 10 damage
             //m_Animation->SetProps("bullet", 0, 1, 1);
             break;
         case BulletType::RIFE:
-            m_Speed = 700.0f;
+            m_Speed = 500.0f;
             m_Damage = 30.0f;
             //m_FireDelay = 0.1f; // Rifle gây 20 damage
             //m_Animation->SetProps("bullet", 0, 1, 1);

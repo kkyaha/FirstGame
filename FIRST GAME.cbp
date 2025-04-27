@@ -29,6 +29,7 @@
 					<Add directory="./" />
 					<Add directory="src/Bullet" />
 					<Add directory="src/Menu" />
+					<Add directory="src" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -53,6 +54,7 @@
 					<Add directory="./" />
 					<Add directory="src/Bullet" />
 					<Add directory="src/Menu" />
+					<Add directory="src" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -94,6 +96,8 @@
 		<Unit filename="src/Object/IObject.h" />
 		<Unit filename="src/Physics/Transform.h" />
 		<Unit filename="src/Physics/Vector2D.h" />
+		<Unit filename="src/SoundManager.cpp" />
+		<Unit filename="src/SoundManager.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

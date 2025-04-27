@@ -13,6 +13,8 @@
 #include "GameOverMenu.h"
 #include <cstdlib>
 #include <ctime>
+#include <SDL_mixer.h>
+#include "SoundManager.h"
 
 using namespace std;
 
@@ -59,6 +61,10 @@ bool Engine::Init() {
         TextureManager::GetInstance()->Load("zombie_run", "Assets/ZombieRun.png");
         TextureManager::GetInstance()->Load("zombie_attack", "Assets/ZombieAttack.png");
         TextureManager::GetInstance()->Load("bullet", "Assets/Bullet.png");
+
+        SoundManager::GetInstance()->LoadSound("pistol", "Assets/pistolsound.wav");
+        SoundManager::GetInstance()->LoadMusic("music", "Assets/nhacnen.mp3");
+        SoundManager::GetInstance()->PlayMusic("music",-1);
 
         player = new Soilder(new Properties("player_knife", 960, 540, 305, 223));
 

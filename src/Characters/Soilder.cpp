@@ -10,6 +10,7 @@
 #include "BulletManager.h"
 #include "Zombie.h"
 #include "ZombieManager.h"
+#include "SoundManager.h"
 
 Soilder::Soilder(Properties* props): Character(props) {
     m_Animation = new Animation();
@@ -171,8 +172,15 @@ void Soilder::Update(float dt) {
 
     if (Input::GetInstance()->GetMouseButtonDown(SDL_BUTTON_LEFT))
     {
-        if(m_WeaponID == 2 or m_WeaponID == 3 or m_WeaponID == 4)
+        if(m_WeaponID == 2)
+        {
+            BulletManager::GetInstance()->FireBullet(m_Transform->X, m_Transform->Y, m_Angle, BulletType::PISTOL);
+            SoundManager::GetInstance()->PlaySound("gun", -1);
+        }
+        if(m_WeaponID == 3)
             BulletManager::GetInstance()->FireBullet(m_Transform->X, m_Transform->Y, m_Angle, BulletType::RIFE);
+        if(m_WeaponID == 4)
+            BulletManager::GetInstance()->FireBullet(m_Transform->X, m_Transform->Y, m_Angle, BulletType::SHOTGUN);
     }
     Position::GetInstance().SetPlayerPosition(m_Transform->X, m_Transform->Y);
     m_Animation->Update();

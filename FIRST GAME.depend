@@ -21,7 +21,7 @@
 	"GameOverMenu.h"
 	"Soilder.h"
 
-1744120051 source:c:\nguyen khanh ky\c++\first game\src\core\engine.cpp
+1745509404 source:c:\nguyen khanh ky\c++\first game\src\core\engine.cpp
 	"Engine.h"
 	"TextureManager.h"
 	"Input.h"
@@ -37,6 +37,8 @@
 	"GameOverMenu.h"
 	<cstdlib>
 	<ctime>
+	<SDL_mixer.h>
+	"SoundManager.h"
 
 1740302661 c:\nguyen khanh ky\c++\first game\src\graphics\texturemanager.h
 	<string>
@@ -55,7 +57,7 @@
 1739442368 c:\nguyen khanh ky\c++\first game\src\physics\transform.h
 	"Vector2D.h"
 
-1743863153 source:c:\nguyen khanh ky\c++\first game\src\characters\soilder.cpp
+1745464691 source:c:\nguyen khanh ky\c++\first game\src\characters\soilder.cpp
 	"Soilder.h"
 	"TextureManager.h"
 	"SDL.h"
@@ -68,6 +70,7 @@
 	"BulletManager.h"
 	"Zombie.h"
 	"ZombieManager.h"
+	"SoundManager.h"
 
 1743861070 c:\nguyen khanh ky\c++\first game\src\characters\soilder.h
 	"Character.h"
@@ -154,7 +157,7 @@
 
 1740487688 c:\nguyen khanh ky\c++\first game\src\characters\position.h
 
-1740537349 c:\nguyen khanh ky\c++\first game\src\bullet\bulletmanager.h
+1745374434 c:\nguyen khanh ky\c++\first game\src\bullet\bulletmanager.h
 	<vector>
 	"Bullet.h"
 
@@ -162,7 +165,7 @@
 	<iostream>
 	"Animation.h"
 
-1744120051 source:c:\nguyen khanh ky\c++\first game\src\bullet\bullet.cpp
+1745374434 source:c:\nguyen khanh ky\c++\first game\src\bullet\bullet.cpp
 	"Bullet.h"
 	"Soilder.h"
 	"BulletManager.h"
@@ -217,4 +220,14 @@
 
 1743067753 c:\nguyen khanh ky\c++\first game\src\menu\gameovermenu.h
 	"Menu.h"
+
+1745509297 source:c:\nguyen khanh ky\c++\first game\src\soundmanager.cpp
+	"SoundManager.h"
+	<SDL.h>
+	<iostream>
+
+1745464327 c:\nguyen khanh ky\c++\first game\src\soundmanager.h
+	<SDL_mixer.h>
+	<string>
+	<map>
 
