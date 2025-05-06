@@ -16,7 +16,7 @@ void Camera::Update(Soilder* target)
 
         if(m_ViewBox.x < 0) m_ViewBox.x = 0;
         if(m_ViewBox.y < 0) m_ViewBox.y = 0;
-        if (m_ViewBox.x > 1920 - m_ViewBox.w) m_ViewBox.x = 1920 - m_ViewBox.w;
-        if (m_ViewBox.y > 1020 - m_ViewBox.h) m_ViewBox.y = 1080 - m_ViewBox.h;
+        if (m_ViewBox.x > 4044 - m_ViewBox.w) m_ViewBox.x = 4044 - m_ViewBox.w;
+        if (m_ViewBox.y > 3890 - m_ViewBox.h) m_ViewBox.y = 3890 - m_ViewBox.h;
     }
 }

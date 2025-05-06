@@ -35,15 +35,22 @@ void BulletManager::FireBullet(float x, float y, float angle, BulletType type) {
     if (currentTime - m_LastFireTime < m_FireDelay) return;
     m_LastFireTime = currentTime;
 
-    // Lấy tọa độ từ nhân vật
+    // Tính offset vị trí đầu nòng súng
+    float barrelLength = 60.0f; // chiều dài từ tâm nhân vật đến đầu súng
+    float offsetX = cos(angle * M_PI / 180.0f) * barrelLength;
+    float offsetY = sin(angle * M_PI / 180.0f) * barrelLength;
 
-    // Tính toán vị trí nòng súng
-    float offsetX = cos(angle * M_PI / 180.0f) * 50;
-    float offsetY = sin(angle * M_PI / 180.0f) * 50;
+    // Tính vị trí đạn bắt đầu (toạ độ thế giới - KHÔNG trừ Camera)
+    float bulletX = x + offsetX;
+    float bulletY = y + offsetY;
 
-    // Khởi tạo đạn ở vị trí nhân vật
-    m_Bullets.push_back(new Bullet(x + offsetX - Camera::GetInstance()->GetX(), y + offsetY -Camera::GetInstance()->GetY(), angle, type));
+    // Tạo đạn
+    m_Bullets.push_back(new Bullet(bulletX, bulletY, angle, type));
+
+    std::cout << "[DEBUG] Fire bullet at (" << bulletX << ", " << bulletY
+              << ") with angle " << angle << std::endl;
 }
+
 
 bool ZombieManager::CheckBulletCollision(Bullet* bullet) {
     SDL_Rect bulletRect = bullet->GetCollisionRect(); // Tọa độ thế giới

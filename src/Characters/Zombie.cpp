@@ -18,7 +18,7 @@ Zombie::Zombie(Properties* props): Character(props)
     m_Animation = new Animation();
     m_Animation->SetProps("zombie_run", 0, 16, 50);
     m_Angle = 0;
-    m_Speed = 0.5;
+    m_Speed = 1.25;
     m_Health = 100;
     player = Engine::GetInstance()->GetPlayer();
     std::cout << "Zombie initialized at (" << m_X << ", " << m_Y << ")" << std::endl;
@@ -77,14 +77,12 @@ void Zombie::Draw() {
     m_Animation->Draw(m_Transform->X - Camera::GetInstance()->GetX(),
                       m_Transform->Y - Camera::GetInstance()->GetY(),
                       m_Width, m_Height, m_Angle);
-    //SDL_Rect hitbox = GetCollisionRect(); // Hàm này trả về hitbox của zombie theo tọa độ thế giới
-    // Điều chỉnh hitbox theo camera
-    //hitbox.x -= Camera::GetInstance()->GetX();
-    //hitbox.y -= Camera::GetInstance()->GetY();
+    SDL_Rect hitbox = GetCollisionRect(); // Hàm này trả về hitbox của zombie theo tọa độ thế giới
+    hitbox.x -= Camera::GetInstance()->GetX();
+    hitbox.y -= Camera::GetInstance()->GetY();
 
-    // Thiết lập màu đỏ và vẽ đường viền hitbox
-    //SDL_SetRenderDrawColor(Engine::GetInstance()->GetRenderer(), 255, 0, 0, 255);
-    //SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &hitbox);
+    SDL_SetRenderDrawColor(Engine::GetInstance()->GetRenderer(), 255, 0, 0, 255);
+    SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &hitbox);
 }
 
 void Zombie::PushBack(float dirX, float dirY, float force) {

@@ -46,20 +46,20 @@ void ZombieManager::SpawnZombie() {
 
     switch (side) {
         case 0:
-            x = rand() % 1920;
-            y = -100;
+            x = rand() % 4044;
+            y = -20;
             break;
         case 1:
-            x = rand() % 1920;
-            y = 1180;
+            x = rand() % 4044;
+            y = 3900;
             break;
         case 2:
-            x = -100;
-            y = rand() % 1080;
+            x = -20;
+            y = rand() % 3890;
             break;
         case 3:
-            x = 2020;
-            y = rand() % 1080;
+            x = 4054;
+            y = rand() % 3890;
             break;
     }
     Zombie* zombie = new Zombie(new Properties("zombie_idle", x, y, 318, 294));
@@ -76,7 +76,7 @@ void ZombieManager::Clean() {
 }
 
 void ZombieManager::IncreaseDifficulty() {
-    if (m_MaxZombies < 50) { // Giới hạn tối đa 50 zombie trên màn hình
+    if (m_MaxZombies < 100) { // Giới hạn tối đa 50 zombie trên màn hình
         m_MaxZombies += 2;   // Mỗi 30 giây, tăng 2 zombie tối đa
     }
 

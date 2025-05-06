@@ -2,6 +2,7 @@
 #include "Soilder.h"
 #include "BulletManager.h"
 #include "Engine.h"
+#include "Camera.h"
 #include <cmath>
 
 Bullet::Bullet(float x, float y, float angle, BulletType type): m_X(x), m_Y(y), m_Angle(angle), m_Active(true)
@@ -49,8 +50,18 @@ void Bullet::Update(float dt) {
 
 void Bullet::Draw()
 {
-    m_Animation->Draw(m_X, m_Y, 64, 64, m_Angle-180);  // Vẽ đạn
-    //SDL_Rect rect = GetCollisionRect();
-    //SDL_SetRenderDrawColor(Engine::GetInstance()->GetRenderer(), 0, 255, 0, 255);
-    //SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &rect);
+    float camX = Camera::GetInstance()->GetX();
+    float camY = Camera::GetInstance()->GetY();
+
+    // Vẽ đạn ở vị trí đã trừ camera
+    m_Animation->Draw(m_X - camX, m_Y - camY, 64, 64, m_Angle - 180);
+
+    // Vẽ hitbox cũng trừ camera để trùng với sprite
+    SDL_Rect rect = GetCollisionRect();
+    rect.x -= (int)camX;
+    rect.y -= (int)camY;
+
+    SDL_SetRenderDrawColor(Engine::GetInstance()->GetRenderer(), 0, 255, 0, 255);
+    SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &rect);
 }
+

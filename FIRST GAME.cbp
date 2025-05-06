@@ -96,8 +96,8 @@
 		<Unit filename="src/Object/IObject.h" />
 		<Unit filename="src/Physics/Transform.h" />
 		<Unit filename="src/Physics/Vector2D.h" />
-		<Unit filename="src/SoundManager.cpp" />
-		<Unit filename="src/SoundManager.h" />
+		<Unit filename="src/SoundManager/SoundManager.cpp" />
+		<Unit filename="src/SoundManager/SoundManager.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

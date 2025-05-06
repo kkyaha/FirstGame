@@ -14,7 +14,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <SDL_mixer.h>
-#include "SoundManager.h"
+#include "SoundManager/SoundManager.h"
 
 using namespace std;
 
@@ -42,7 +42,7 @@ bool Engine::Init() {
         return false;
     }
 
-        TextureManager::GetInstance()->Load("background", "Assets/MAP3.png");
+        TextureManager::GetInstance()->Load("background", "Assets/MAP4.png");
         TextureManager::GetInstance()->Load("player_hand_gun_idle", "Assets/HandGunIdle.png");
         TextureManager::GetInstance()->Load("player_hand_gun_run", "Assets/HandGunRun.png");
         TextureManager::GetInstance()->Load("player_hand_gun_attack", "Assets/HandGunAttack.png");
@@ -79,7 +79,7 @@ bool Engine::Init() {
 
 
         srand(time(0)); // Khởi tạo random
-        for (int i = 0; i <= 10; i++)
+        for (int i = 0; i <= 30; i++)
             ZombieManager::GetInstance()->SpawnZombie();
         return m_IsRunning = true;
 
@@ -89,13 +89,12 @@ void Engine::Render() {
     SDL_RenderClear(m_Renderer);
     if (m_GameState == GameState::MENU) {
         m_Menu.Render();
-        //m_GameOverMenu.Render();
     }
     else if (m_GameState == GameState::GAME_OVER) {
         m_GameOverMenu.Render();
     } else {
         SDL_Rect camera = Camera::GetInstance()->GetViewBox();
-        TextureManager::GetInstance()->Draw("background", -camera.x, -camera.y, 1920, 1080);
+        TextureManager::GetInstance()->Draw("background", -camera.x, -camera.y, 4044, 3890);
         player->Draw();
         ZombieManager::GetInstance()->Draw();
         player->RenderHealthBar(Engine::GetInstance()->GetRenderer());

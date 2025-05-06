@@ -21,7 +21,7 @@
 	"GameOverMenu.h"
 	"Soilder.h"
 
-1745509404 source:c:\nguyen khanh ky\c++\first game\src\core\engine.cpp
+1746460414 source:c:\nguyen khanh ky\c++\first game\src\core\engine.cpp
 	"Engine.h"
 	"TextureManager.h"
 	"Input.h"
@@ -38,7 +38,7 @@
 	<cstdlib>
 	<ctime>
 	<SDL_mixer.h>
-	"SoundManager.h"
+	"SoundManager/SoundManager.h"
 
 1740302661 c:\nguyen khanh ky\c++\first game\src\graphics\texturemanager.h
 	<string>
@@ -57,7 +57,7 @@
 1739442368 c:\nguyen khanh ky\c++\first game\src\physics\transform.h
 	"Vector2D.h"
 
-1745464691 source:c:\nguyen khanh ky\c++\first game\src\characters\soilder.cpp
+1746460249 source:c:\nguyen khanh ky\c++\first game\src\characters\soilder.cpp
 	"Soilder.h"
 	"TextureManager.h"
 	"SDL.h"
@@ -70,7 +70,7 @@
 	"BulletManager.h"
 	"Zombie.h"
 	"ZombieManager.h"
-	"SoundManager.h"
+	"SoundManager/SoundManager.h"
 
 1743861070 c:\nguyen khanh ky\c++\first game\src\characters\soilder.h
 	"Character.h"
@@ -108,14 +108,14 @@
 
 1739612771 c:\nguyen khanh ky\c++\first game\camera\camera.h
 
-1741746238 source:c:\nguyen khanh ky\c++\first game\src\camera\camera.cpp
+1746433906 source:c:\nguyen khanh ky\c++\first game\src\camera\camera.cpp
 	"Camera.h"
 
 1739670985 c:\nguyen khanh ky\c++\first game\src\camera\camera.h
 	<SDL.h>
 	"Soilder.h"
 
-1744119387 source:c:\nguyen khanh ky\c++\first game\src\characters\zombie.cpp
+1746460325 source:c:\nguyen khanh ky\c++\first game\src\characters\zombie.cpp
 	"Zombie.h"
 	"Soilder.h"
 	"TextureManager.h"
@@ -146,7 +146,7 @@
 	"Zombie.h"
 	<vector>
 
-1743863352 source:c:\nguyen khanh ky\c++\first game\src\characters\zombiemanager.cpp
+1746460414 source:c:\nguyen khanh ky\c++\first game\src\characters\zombiemanager.cpp
 	"ZombieManager.h"
 	"Zombie.h"
 	"Camera.h"
@@ -165,11 +165,12 @@
 	<iostream>
 	"Animation.h"
 
-1745374434 source:c:\nguyen khanh ky\c++\first game\src\bullet\bullet.cpp
+1746437434 source:c:\nguyen khanh ky\c++\first game\src\bullet\bullet.cpp
 	"Bullet.h"
 	"Soilder.h"
 	"BulletManager.h"
 	"Engine.h"
+	"Camera.h"
 	<cmath>
 
 1740070955 source:c:\nguyen khanh ky\c++\first game\src\bullet\pistolbullet.cpp
@@ -193,7 +194,7 @@
 1740070549 c:\nguyen khanh ky\c++\first game\src\bullet\shotgunbullet.h
 	"Bullet.h"
 
-1743646701 source:c:\nguyen khanh ky\c++\first game\src\bullet\bulletmanager.cpp
+1746437418 source:c:\nguyen khanh ky\c++\first game\src\bullet\bulletmanager.cpp
 	"BulletManager.h"
 	"ZombieManager.h"
 	"Bullet.h"
@@ -227,6 +228,16 @@
 	<iostream>
 
 1745464327 c:\nguyen khanh ky\c++\first game\src\soundmanager.h
+	<SDL_mixer.h>
+	<string>
+	<map>
+
+1745509297 source:c:\nguyen khanh ky\c++\first game\src\soundmanager\soundmanager.cpp
+	"SoundManager.h"
+	<SDL.h>
+	<iostream>
+
+1745464327 c:\nguyen khanh ky\c++\first game\src\soundmanager\soundmanager.h
 	<SDL_mixer.h>
 	<string>
 	<map>

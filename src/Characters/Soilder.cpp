@@ -10,17 +10,17 @@
 #include "BulletManager.h"
 #include "Zombie.h"
 #include "ZombieManager.h"
-#include "SoundManager.h"
+#include "SoundManager/SoundManager.h"
 
 Soilder::Soilder(Properties* props): Character(props) {
     m_Animation = new Animation();
     m_Animation->SetProps(m_TextureID, 0, 20, 80, SDL_FLIP_HORIZONTAL);
-    m_Speed = 5;
+    m_Speed = 2.5;
     m_Angle = 0;
     m_WeaponID = 1;
     m_Health = 100;
-    m_Transform->X = 960;
-    m_Transform->Y = 540;
+    m_Transform->X = 2000;
+    m_Transform->Y = 1900;
 }
 
 void Soilder::RenderHealthBar(SDL_Renderer* renderer) {
@@ -69,7 +69,7 @@ void Soilder::Draw() {
     int renderY = m_Transform->Y - Camera::GetInstance()->GetY() - 50;
 
     m_Animation->Draw(renderX, renderY, m_Width, m_Height, m_Angle);
-    RenderHealthBar(Engine::GetInstance()->GetRenderer());
+    //RenderHealthBar(Engine::GetInstance()->GetRenderer());
 }
 
 void Soilder::MeleeAttack() {
@@ -96,7 +96,7 @@ void Soilder::MeleeAttack() {
             if (distance > 0.0f) {
                 float pushX = (dx / distance);
                 float pushY = (dy / distance);
-                zombie->PushBack(pushX, pushY, 50.0f);
+                zombie->PushBack(pushX, pushY, 20.0f);
             }
         }
     }
@@ -149,12 +149,12 @@ void Soilder::Update(float dt) {
         isMoving = true;
     }
     if (Input::GetInstance()->GetKeyDown(SDL_SCANCODE_S)) {
-        if(m_Transform->Y < 1030)
+        if(m_Transform->Y < 3840)
             m_Transform->TranslateY(m_Speed);
         isMoving = true;
     }
     if (Input::GetInstance()->GetKeyDown(SDL_SCANCODE_D)) {
-        if(m_Transform->X < 1870)
+        if(m_Transform->X < 4004)
             m_Transform->TranslateX(m_Speed);
         isMoving = true;
     }
@@ -201,7 +201,7 @@ void Soilder::TakeDamage(int damage) {
 }
 
 void Soilder::Reset() {
-    m_Health = 100; // Reset máu
+    m_Health = 100;
     m_Transform->X = 960;
     m_Transform->Y = 540;
 }
