@@ -25,7 +25,7 @@ private:
     float m_LastSpawnTime;
     float m_SpawnInterval = 0.5f;
     float m_TimeElapsed;
-    int m_MaxZombies = 10;
+    int m_MaxZombies = 50;
 };
 
 #endif // ZOMBIEMANAGER_H

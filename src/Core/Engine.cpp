@@ -79,7 +79,7 @@ bool Engine::Init() {
 
 
         srand(time(0)); // Khởi tạo random
-        for (int i = 0; i <= 30; i++)
+        for (int i = 0; i <= 1; i++)
             ZombieManager::GetInstance()->SpawnZombie();
         return m_IsRunning = true;
 

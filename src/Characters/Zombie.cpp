@@ -77,12 +77,12 @@ void Zombie::Draw() {
     m_Animation->Draw(m_Transform->X - Camera::GetInstance()->GetX(),
                       m_Transform->Y - Camera::GetInstance()->GetY(),
                       m_Width, m_Height, m_Angle);
-    SDL_Rect hitbox = GetCollisionRect(); // Hàm này trả về hitbox của zombie theo tọa độ thế giới
-    hitbox.x -= Camera::GetInstance()->GetX();
-    hitbox.y -= Camera::GetInstance()->GetY();
+    //SDL_Rect hitbox = GetCollisionRect(); // Hàm này trả về hitbox của zombie theo tọa độ thế giới
+    //hitbox.x -= Camera::GetInstance()->GetX();
+    //hitbox.y -= Camera::GetInstance()->GetY();
 
-    SDL_SetRenderDrawColor(Engine::GetInstance()->GetRenderer(), 255, 0, 0, 255);
-    SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &hitbox);
+    //SDL_SetRenderDrawColor(Engine::GetInstance()->GetRenderer(), 255, 0, 0, 255);
+    //SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &hitbox);
 }
 
 void Zombie::PushBack(float dirX, float dirY, float force) {

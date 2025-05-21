@@ -30,15 +30,15 @@ void BulletManager::Draw() {
     }
 }
 
-void BulletManager::FireBullet(float x, float y, float angle, BulletType type) {
+void BulletManager::FireBullet(float x, float y, float angle, BulletType type, float m_FireDelay) {
     float currentTime = SDL_GetTicks() / 1000.0f;
     if (currentTime - m_LastFireTime < m_FireDelay) return;
     m_LastFireTime = currentTime;
 
     // Tính offset vị trí đầu nòng súng
     float barrelLength = 60.0f; // chiều dài từ tâm nhân vật đến đầu súng
-    float offsetX = cos(angle * M_PI / 180.0f) * barrelLength;
-    float offsetY = sin(angle * M_PI / 180.0f) * barrelLength;
+    float offsetX = cos(angle * M_PI / 180.0f) * (barrelLength)-55;
+    float offsetY = sin(angle * M_PI / 180.0f) * (barrelLength);
 
     // Tính vị trí đạn bắt đầu (toạ độ thế giới - KHÔNG trừ Camera)
     float bulletX = x + offsetX;
@@ -46,9 +46,6 @@ void BulletManager::FireBullet(float x, float y, float angle, BulletType type) {
 
     // Tạo đạn
     m_Bullets.push_back(new Bullet(bulletX, bulletY, angle, type));
-
-    std::cout << "[DEBUG] Fire bullet at (" << bulletX << ", " << bulletY
-              << ") with angle " << angle << std::endl;
 }
 
 
@@ -57,9 +54,6 @@ bool ZombieManager::CheckBulletCollision(Bullet* bullet) {
     for (auto& zombie : m_Zombies) {
         SDL_Rect zombieRect = zombie->GetCollisionRect(); // Tọa độ thế giới
         if (SDL_HasIntersection(&bulletRect, &zombieRect)) {
-            std::cout << "[DEBUG] Collision detected: Bullet at ("
-                      << bullet->GetX() << ", " << bullet->GetY()
-                      << ") vs Zombie at (" << zombie->GetX() << ", " << zombie->GetY() << ")\n";
             float bulletDx = bullet->GetDirectionX();
             float bulletDy = bullet->GetDirectionY();
             zombie->PushBack(bulletDx, bulletDy, 20.0f);

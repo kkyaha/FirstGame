@@ -14,20 +14,17 @@ Bullet::Bullet(float x, float y, float angle, BulletType type): m_X(x), m_Y(y), 
     switch (type) {
         case BulletType::PISTOL:
             m_Speed = 400.0f;
-            m_Damage = 20.0f;
-            //m_FireDelay = 0.3f;  // Pistol gây 10 damage
+            m_Damage = 20.0f; // Pistol gây 10 damage
             //m_Animation->SetProps("bullet", 0, 1, 1);
             break;
         case BulletType::RIFE:
             m_Speed = 500.0f;
-            m_Damage = 30.0f;
-            //m_FireDelay = 0.1f; // Rifle gây 20 damage
+            m_Damage = 30.0f; // Rifle gây 20 damage
             //m_Animation->SetProps("bullet", 0, 1, 1);
             break;
         case BulletType::SHOTGUN:
             m_Speed = 400.0f;
-            m_Damage = 40.0f;
-            //m_FireDelay = 0.5f;  // Shotgun gây 30 damage
+            m_Damage = 40.0f;  // Shotgun gây 30 damage
             //m_Animation->SetProps("bullet", 0, 1, 1);
             break;
     }
@@ -57,11 +54,11 @@ void Bullet::Draw()
     m_Animation->Draw(m_X - camX, m_Y - camY, 64, 64, m_Angle - 180);
 
     // Vẽ hitbox cũng trừ camera để trùng với sprite
-    SDL_Rect rect = GetCollisionRect();
-    rect.x -= (int)camX;
-    rect.y -= (int)camY;
+    //SDL_Rect rect = GetCollisionRect();
+    //rect.x -= (int)camX;
+    //rect.y -= (int)camY;
 
-    SDL_SetRenderDrawColor(Engine::GetInstance()->GetRenderer(), 0, 255, 0, 255);
-    SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &rect);
+    //SDL_SetRenderDrawColor(Engine::GetInstance()->GetRenderer(), 0, 255, 0, 255);
+    //SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &rect);
 }
 

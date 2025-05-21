@@ -15,7 +15,7 @@
 Soilder::Soilder(Properties* props): Character(props) {
     m_Animation = new Animation();
     m_Animation->SetProps(m_TextureID, 0, 20, 80, SDL_FLIP_HORIZONTAL);
-    m_Speed = 2.5;
+    m_Speed = 2.7;
     m_Angle = 0;
     m_WeaponID = 1;
     m_Health = 100;
@@ -74,9 +74,9 @@ void Soilder::Draw() {
 
 void Soilder::MeleeAttack() {
     SDL_Rect soldierAttackBox = {
-        (int)(m_Transform->X - 50), // Phạm vi tấn công bên trái
-        (int)(m_Transform->Y - 50), // Phạm vi tấn công phía trên
-        100, 100 // Kích thước vùng tấn công
+        (int)(m_Transform->X - 50),
+        (int)(m_Transform->Y - 50),
+        100, 100
     };
     static float lastAttackTime = 0;
     float currentTime = SDL_GetTicks() / 1000.0f; // Thời gian hiện tại
@@ -88,7 +88,7 @@ void Soilder::MeleeAttack() {
         SDL_Rect zombieBox = zombie->GetCollisionRect();
 
         if (SDL_HasIntersection(&soldierAttackBox, &zombieBox)) {
-            zombie->TakeDamage(10);
+            zombie->TakeDamage(30);
             float dx = zombie->GetX() - m_Transform->X;
             float dy = zombie->GetY() - m_Transform->Y;
             float distance = sqrt(dx * dx + dy * dy);
@@ -96,7 +96,7 @@ void Soilder::MeleeAttack() {
             if (distance > 0.0f) {
                 float pushX = (dx / distance);
                 float pushY = (dy / distance);
-                zombie->PushBack(pushX, pushY, 20.0f);
+                zombie->PushBack(pushX, pushY, 40.0f);
             }
         }
     }
@@ -174,13 +174,13 @@ void Soilder::Update(float dt) {
     {
         if(m_WeaponID == 2)
         {
-            BulletManager::GetInstance()->FireBullet(m_Transform->X, m_Transform->Y, m_Angle, BulletType::PISTOL);
+            BulletManager::GetInstance()->FireBullet(m_Transform->X, m_Transform->Y, m_Angle, BulletType::PISTOL, 0.2);
             SoundManager::GetInstance()->PlaySound("gun", -1);
         }
         if(m_WeaponID == 3)
-            BulletManager::GetInstance()->FireBullet(m_Transform->X, m_Transform->Y, m_Angle, BulletType::RIFE);
+            BulletManager::GetInstance()->FireBullet(m_Transform->X, m_Transform->Y, m_Angle, BulletType::RIFE, 0.1);
         if(m_WeaponID == 4)
-            BulletManager::GetInstance()->FireBullet(m_Transform->X, m_Transform->Y, m_Angle, BulletType::SHOTGUN);
+            BulletManager::GetInstance()->FireBullet(m_Transform->X, m_Transform->Y, m_Angle, BulletType::SHOTGUN, 0.25);
     }
     Position::GetInstance().SetPlayerPosition(m_Transform->X, m_Transform->Y);
     m_Animation->Update();
@@ -193,9 +193,9 @@ void Soilder::Clean() {
 
 void Soilder::TakeDamage(int damage) {
     m_Health -= damage;
-    std::cout << "[DEBUG] Nhân vật bị tấn công! Máu còn lại: " << m_Health << std::endl;
+    std::cout << " Nhân vật bị tấn công! Máu còn lại: " << m_Health << std::endl;
     if (m_Health <= 0) {
-        std::cout << "[DEBUG] Nhân vật đã chết!\n";
+        std::cout << " Nhân vật đã chết!\n";
         Engine::GetInstance()->SetGameState(GameState::GAME_OVER);
     }
 }
